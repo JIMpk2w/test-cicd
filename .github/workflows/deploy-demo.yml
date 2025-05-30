@@ -6,3 +6,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "Deploying to demo environment"
+
+  deploy:
+    needs: build
+    runs-on: ["self-hosted"]
+
+    steps:
+      - run: echo "hello, world!"
+      - run: echo $PWD
